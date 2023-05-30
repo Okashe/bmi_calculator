@@ -10,8 +10,23 @@ class BMICalculator extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: InputPage(),
+    return MaterialApp(
+      theme: ThemeData(
+        colorScheme: const ColorScheme(
+          primary: Colors.red,
+          brightness: Brightness.light,
+          onPrimary: Colors.white,
+          secondary: Colors.purple,
+          onSecondary: Colors.white,
+          error: Colors.white,
+          onError: Colors.red,
+          background: Colors.white,
+          onBackground: Colors.black,
+          surface: Color.fromARGB(19, 186, 254, 254),
+          onSurface: Color.fromARGB(6, 9, 0, 90),
+        ),
+      ),
+      home: const InputPage(),
     );
   }
 }
