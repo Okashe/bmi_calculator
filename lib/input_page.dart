@@ -16,8 +16,14 @@ class _InputPageState extends State<InputPage> {
           child: Text('BMI CALCULATOR'),
         ),
       ),
-      body: const Center(
-        child: Text('Body Text'),
+      body: Container(
+        height: 200.0,
+        width: 170.0,
+        margin: const EdgeInsets.all(15.0),
+        decoration: BoxDecoration(
+          color: const Color(0xff1d1e33),
+          borderRadius: BorderRadius.circular(10.0),
+        ),
       ),
     );
   }
