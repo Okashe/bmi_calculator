@@ -3,10 +3,10 @@ import 'reusable_card.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card_content.dart';
 
-const bottomContainerHeight = 80.0;
-const activeCardColor = Color(0xff1d1e33);
-const inactiveCardColor = Color(0xff111328);
-const bottomContainerColor = Color(0xffeb1555);
+const kBottomContainerHeight = 80.0;
+const kActiveCardColor = Color(0xff1d1e33);
+const kInactiveCardColor = Color(0xff111328);
+const kBottomContainerColor = Color(0xffeb1555);
 
 enum Gender {
   male,
@@ -22,8 +22,8 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender? selectedGender;
-  Color maleCardColor = inactiveCardColor;
-  Color femaleCardColor = inactiveCardColor;
+  Color maleCardColor = kInactiveCardColor;
+  Color femaleCardColor = kInactiveCardColor;
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +46,8 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     colour: selectedGender == Gender.male
-                        ? activeCardColor
-                        : inactiveCardColor,
+                        ? kActiveCardColor
+                        : kInactiveCardColor,
                     cardChild: const ReusableCardContent(
                       cardIcon: FontAwesomeIcons.mars,
                       label: 'Male',
@@ -62,8 +62,8 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     colour: selectedGender == Gender.female
-                        ? activeCardColor
-                        : inactiveCardColor,
+                        ? kActiveCardColor
+                        : kInactiveCardColor,
                     cardChild: const ReusableCardContent(
                       cardIcon: FontAwesomeIcons.venus,
                       label: 'FEMALE',
@@ -76,7 +76,7 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: ReusableCard(
               onPress: () {},
-              colour: activeCardColor,
+              colour: kActiveCardColor,
               cardChild: const ReusableCardContent(
                 cardIcon: FontAwesomeIcons.mars,
                 label: 'Female',
@@ -89,7 +89,7 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     onPress: () {},
-                    colour: activeCardColor,
+                    colour: kActiveCardColor,
                     cardChild: const ReusableCardContent(
                       cardIcon: FontAwesomeIcons.mars,
                       label: 'Female',
@@ -99,7 +99,7 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     onPress: () {},
-                    colour: activeCardColor,
+                    colour: kActiveCardColor,
                     cardChild: const ReusableCardContent(
                       cardIcon: FontAwesomeIcons.mars,
                       label: 'Female',
@@ -111,9 +111,9 @@ class _InputPageState extends State<InputPage> {
           ),
           Container(
             margin: const EdgeInsets.only(top: 10.0),
-            color: bottomContainerColor,
+            color: kBottomContainerColor,
             width: double.infinity,
-            height: bottomContainerHeight,
+            height: kBottomContainerHeight,
           ),
         ],
       ),
