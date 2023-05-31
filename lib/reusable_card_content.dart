@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 //import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+const labelTextStyle = TextStyle(
+  fontSize: 18.0,
+  color: Color(0xff8d8e98),
+);
+
 class ReusableCardContent extends StatelessWidget {
   const ReusableCardContent(
       {super.key, required this.cardIcon, required this.label});
@@ -22,10 +27,7 @@ class ReusableCardContent extends StatelessWidget {
           ),
           Text(
             label,
-            style: const TextStyle(
-              fontSize: 18.0,
-              color: Color(0xff8d8e98),
-            ),
+            style: labelTextStyle,
           ),
         ]);
   }
