@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'reusable_card.dart';
+
+const bottomContainerHeight = 80.0;
+const cardColor = Color(0xff1d1e33);
+const bottomContainerColor = Color(0xffeb1555);
 
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
@@ -20,61 +25,37 @@ class _InputPageState extends State<InputPage> {
           children: <Widget>[
             Expanded(
               child: Row(
-                children: <Widget>[
+                children: const <Widget>[
                   Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                        color: const Color(0xff1d1e33),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
+                    child: ReusableCard(colour: cardColor),
                   ),
                   Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                        color: const Color(0xff1d1e33),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
+                    child: ReusableCard(colour: cardColor),
                   ),
                 ],
               ),
             ),
-            Expanded(
-              child: Container(
-                margin: const EdgeInsets.all(15.0),
-                decoration: BoxDecoration(
-                  color: const Color(0xff1d1e33),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-              ),
+            const Expanded(
+              child: ReusableCard(colour: cardColor),
             ),
             Expanded(
               child: Row(
-                children: <Widget>[
+                children: const <Widget>[
                   Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                        color: const Color(0xff1d1e33),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
+                    child: ReusableCard(colour: cardColor),
                   ),
                   Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                        color: const Color(0xff1d1e33),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
+                    child: ReusableCard(colour: cardColor),
                   ),
                 ],
               ),
             ),
+            Container(
+              margin: const EdgeInsets.only(top: 10.0),
+              color: bottomContainerColor,
+              width: double.infinity,
+              height: bottomContainerHeight,
+            )
           ],
         ));
   }
