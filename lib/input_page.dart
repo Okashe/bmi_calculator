@@ -39,48 +39,45 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
+                  child: ReusableCard(
+                    onPress: () {
                       setState(() {
                         selectedGender = Gender.male;
                       });
                     },
-                    child: ReusableCard(
-                      colour: selectedGender == Gender.male
-                          ? activeCardColor
-                          : inactiveCardColor,
-                      cardChild: const ReusableCardContent(
-                        cardIcon: FontAwesomeIcons.mars,
-                        label: 'Male',
-                      ),
+                    colour: selectedGender == Gender.male
+                        ? activeCardColor
+                        : inactiveCardColor,
+                    cardChild: const ReusableCardContent(
+                      cardIcon: FontAwesomeIcons.mars,
+                      label: 'Male',
                     ),
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
+                  child: ReusableCard(
+                    onPress: () {
                       setState(() {
                         selectedGender = Gender.female;
                       });
                     },
-                    child: ReusableCard(
-                      colour: selectedGender == Gender.female
-                          ? activeCardColor
-                          : inactiveCardColor,
-                      cardChild: const ReusableCardContent(
-                        cardIcon: FontAwesomeIcons.venus,
-                        label: 'FEMALE',
-                      ),
+                    colour: selectedGender == Gender.female
+                        ? activeCardColor
+                        : inactiveCardColor,
+                    cardChild: const ReusableCardContent(
+                      cardIcon: FontAwesomeIcons.venus,
+                      label: 'FEMALE',
                     ),
                   ),
                 )
               ],
             ),
           ),
-          const Expanded(
+          Expanded(
             child: ReusableCard(
+              onPress: () {},
               colour: activeCardColor,
-              cardChild: ReusableCardContent(
+              cardChild: const ReusableCardContent(
                 cardIcon: FontAwesomeIcons.mars,
                 label: 'Female',
               ),
@@ -88,11 +85,12 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: Row(
-              children: const <Widget>[
+              children: <Widget>[
                 Expanded(
                   child: ReusableCard(
+                    onPress: () {},
                     colour: activeCardColor,
-                    cardChild: ReusableCardContent(
+                    cardChild: const ReusableCardContent(
                       cardIcon: FontAwesomeIcons.mars,
                       label: 'Female',
                     ),
@@ -100,8 +98,9 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: ReusableCard(
+                    onPress: () {},
                     colour: activeCardColor,
-                    cardChild: ReusableCardContent(
+                    cardChild: const ReusableCardContent(
                       cardIcon: FontAwesomeIcons.mars,
                       label: 'Female',
                     ),
