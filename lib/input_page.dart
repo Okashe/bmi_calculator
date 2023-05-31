@@ -4,7 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card_content.dart';
 
 const bottomContainerHeight = 80.0;
-const cardColor = Color(0xff1d1e33);
+const activeCardColor = Color(0xff1d1e33);
+const inactiveCardColor = Color(0xff111328);
 const bottomContainerColor = Color(0xffeb1555);
 
 class InputPage extends StatefulWidget {
@@ -15,6 +16,29 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  Color maleCardColor = inactiveCardColor;
+  Color femaleCardColor = inactiveCardColor;
+
+  void updateColor(int gender) {
+    //male card pressed
+    if (gender == 1) {
+      if (maleCardColor == inactiveCardColor) {
+        maleCardColor = activeCardColor;
+        femaleCardColor = inactiveCardColor;
+      } else {
+        maleCardColor = inactiveCardColor;
+      }
+    }
+    if (gender == 2) {
+      if (femaleCardColor == inactiveCardColor) {
+        femaleCardColor = activeCardColor;
+        maleCardColor = inactiveCardColor;
+      } else {
+        femaleCardColor = inactiveCardColor;
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,22 +51,36 @@ class _InputPageState extends State<InputPage> {
         children: <Widget>[
           Expanded(
             child: Row(
-              children: const <Widget>[
+              children: <Widget>[
                 Expanded(
-                  child: ReusableCard(
-                    colour: cardColor,
-                    cardChild: ReusableCardContent(
-                      cardIcon: FontAwesomeIcons.mars,
-                      label: 'Male',
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        updateColor(1);
+                      });
+                    },
+                    child: ReusableCard(
+                      colour: maleCardColor,
+                      cardChild: const ReusableCardContent(
+                        cardIcon: FontAwesomeIcons.mars,
+                        label: 'Male',
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
-                  child: ReusableCard(
-                    colour: cardColor,
-                    cardChild: ReusableCardContent(
-                      cardIcon: FontAwesomeIcons.mars,
-                      label: 'Female',
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        updateColor(2);
+                      });
+                    },
+                    child: ReusableCard(
+                      colour: femaleCardColor,
+                      cardChild: const ReusableCardContent(
+                        cardIcon: FontAwesomeIcons.venus,
+                        label: 'Female',
+                      ),
                     ),
                   ),
                 )
@@ -51,7 +89,7 @@ class _InputPageState extends State<InputPage> {
           ),
           const Expanded(
             child: ReusableCard(
-              colour: cardColor,
+              colour: activeCardColor,
               cardChild: ReusableCardContent(
                 cardIcon: FontAwesomeIcons.mars,
                 label: 'Female',
@@ -63,7 +101,7 @@ class _InputPageState extends State<InputPage> {
               children: const <Widget>[
                 Expanded(
                   child: ReusableCard(
-                    colour: cardColor,
+                    colour: activeCardColor,
                     cardChild: ReusableCardContent(
                       cardIcon: FontAwesomeIcons.mars,
                       label: 'Female',
@@ -72,7 +110,7 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour: cardColor,
+                    colour: activeCardColor,
                     cardChild: ReusableCardContent(
                       cardIcon: FontAwesomeIcons.mars,
                       label: 'Female',
